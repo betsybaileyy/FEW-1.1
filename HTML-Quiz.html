@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Custom T-Shirt Order Form
+    </title>
+    <h1>T-Shirt Order Form</h1>
+</head>
+
+<body>
+    <figure>
+        <img id="user-image">
+        <figcaption id="display-message">
+            Caption
+        </figcaption>
+    </figure>
+
+    <form id="form">
+        <input type="file" id="file-upload">
+
+        Comments: <input type="text" id="input-message" label="Comments"></br>
+    </br>
+    </br>
+        Choose Size: </br>
+    </br>   
+        Small  <input type="radio" name="size" value="small"></br>
+        Medium  <input type="radio" name="size" value="medium"></br>
+        Large  <input type="radio" name="size" value="large"></br>
+        Check here for Long sleeves <input type="checkbox" name="sleeves" label="long sleeves"> 
+    </form>
+    <script>
+            const fileUpload = document.getElementById('file-upload')
+            const userImage = document.getElementById('user-image')
+            const displayMessage = document.getElementById('display-message')
+            const inputMessage = document.getElementById('input-message')
+            const form = document.getElementById('form')
+          
+            form.onsubmit = function(e) {
+              e.preventDefault()
+            }
+          
+            inputMessage.oninput = function(e) {
+              console.log(e.target.value)
+              displayMessage.innerHTML = e.target.value
+            }
+          
+            fileUpload.onchange = function(e) {
+              console.log(e.target.files)
+              const fr = new FileReader()
+              fr.onload = function(e) {
+                userImage.src = e.target.result
+              }
+              fr.readAsDataURL(e.target.files[0])
+            }
+          </script>
+        
+</body>
+
