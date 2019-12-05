@@ -11,12 +11,17 @@
         <script>
             const cart = [ ]
 
+            const obj = { name:"Shoe", price: 9.99, qty: 3 }
+            console.log(obj)
+            console.log(obj.name)
+
             function addItem(name, price) {
+                const item = { name: name, price: price, qty: 1 }
                 cart.push(name)
             }
 
             function showItems() {
-                console.log(cart)
+                console.log( cart[0] )
             }
 
             addItem('Apple', 0.99)
