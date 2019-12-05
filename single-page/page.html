@@ -1,47 +1,161 @@
-<div class="container">
-    <div class="box header">Header</div>
-    <div class="box sidebar">Sidebar</div>
-    <div class="box main">Main</div>
-    <div class="box footer">Footer</div>
-    <div class="box contact">Contact</div>
+<html>
 
-</div>
+<head>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
 
-<div class="header">
-    <section>
-        <h1>Margo</h1>
-        <p></p>
+        body {
+            font-family: Helvetica;
+            font-weight: 300;
+            color: #444;
+            background-color: #eee;
+        }
+
+        input,
+        select,
+        textarea {
+            margin: 0em 0;
+        }
+
+        .header {
+            font-size: 2em;
+            width: 600px;
+            margin: auto;
+            display: flex;
+            padding: 2em;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        input {
+            padding: 0.5em;
+            border: 3px solid #bbb;
+            border-radius: 0.5em;
+            font-size: 1em;
+            display: inline-block;
+        }
+
+        label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        form>p {
+            display: flex;
+            flex-direction: column;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+            ;
+        }
+
+        select {
+            font-size: 1em;
+        }
+
+        input[type=color],
+        input[type=radio],
+        input[type=checkbox] {
+            margin: 1em;
+        }
+
+        .sectionHeader {
+            height: 4em;
+            font-size: 1em;
+            text-align: center;
+            padding: 4em;
+            padding-top: 0;
+            padding-bottom: 0.5em;
+        }
+
+        .textarea {
+            height: 4em;
+            font-size: 1em;
+            text-align: center;
+            padding: 4em;
+            padding-top: 0;
+            padding-bottom: 0.5em;
+            border: transparent;
+            border-radius: 0.5em;
+        }
+
+        button {
+            padding: 0.5em;
+            font-size: 1em;
+            border: none;
+            background-color: cornflowerblue;
+            color: white;
+            font-weight: bold;
+            margin: 1em;
+            border-radius: 0.5em;
+            flex: 0;
+            align-self: flex-end;
+        }
+
+        button[type="reset"] {
+            background-color: transparent;
+            color: #666;
+        }
+
+       
+
+        /* p:last-child {
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: flex-end;
+                    } */
+    </style>
+</head>
+
+<body>
+
+
+    <div class="header">
+        <section>
+            <h1>Margaux</h1>
+            <p></p>
+        </section>
+    </div>
+
+
+    <section class="sectionHeader">
+        <h2>The Best Dog Evah</h2>
+        <p>Why? Do you have to ask...</p>
     </section>
-</div>
 
+    <section class="sectionHeader">
+        <h2>Border Collie</h2>
+        <p class="textarea">About border Collies... </p>
+    </section>
 
-<section>
-    <h2>The Best Dog Evah</h2>
-    <p>Why? Do you have to ask...</p>
-</section>
+    <section class="sectionHeader">
+        <h2>How Margaux and I Met</h2>
+        <p class="textarea">I was at my local animal shelter when I went to the "puppy yard" to see
+            if any puppies were available for adoption. I saw the sweetest white and gold
+            puppy and thought, wow this would be the perfect dog for me. However, I still
+            wasn't complteley convinced. I went inside the animal shelter and asked to look
+            at kittens. I've never particualrly been a cat person, but a kitten seemed
+            like it might have been a better fit for my lifestyle at the time.
+            </br>
+            </br>
+            After spending some time with the kittens I couldn't stop thinking about the
+            sweet puppy I had met outside. I went out again to spend some more time with her
+            and thats when I knew, I was going to adopt her.
+        </p>
+    </section>
 
-<section>
-    <h2>Border Collie</h2>
-    <p>About border Collies... </p>
-</section>
+    <section>
+        <p>
 
-<section> 
-    <h2>How Margo and I met</h2>
-    <p>I was at my local animal shelter when I went to the "puppy yard" to see
-        if any puppies were available for adoption. I saw the sweetest white and gold
-        puppy and thought, wow this would be the perfect dog for me. However, I still 
-        wasn't complteley convinced. I went inside the animal shelter and asked to look
-        at kittens. I've never particualrly been a cat person, but a kitten seemed
-        like it might have been a better fit for my lifestyle at the time.
-    </br>
-        After spending some time with the kittens I couldn't stop thinking about the 
-        sweet puppy I had met outside. I went out again to spend some more time with her
-        and thats when I knew, I was going to adopt her.
-    </p>
-</section>
+        </p>
+    </section>
 
-<section>
-    <p>
+</body>
 
-    </p>
-</section>
+</html>
