@@ -68,11 +68,16 @@
             }
 
             // Remove Item
-            function removeItem(name) {
+            function removeItem(name, qty = 0) {
                 for (let i = 0; i < cart.length; i += 1) {
                     if (cart[i].name === name) {
-                        cart[i].qty -= 1
-                       // cart.splice(i, 1)
+                        if (qty > 0) {
+                            cart[i].qty -= qty
+                        }
+                      
+                        if (cart[i].qty < 1 || qty === 0) {
+                           cart.splice(i, 1)
+                        }
                         return
                     }
                 }
@@ -83,10 +88,13 @@
             addItem('Apple', 0.99)
             addItem('Orange', 1.29)
             addItem('Banana', 2.99)
+            addItem('Frisbee', 9.92)
 
             showItems()
 
-            removeItem('Banana')
+            removeItem('Apple')
+            removeItem('Frisbee')
+
             
         </script>
     </body>
