@@ -71,7 +71,8 @@
             function removeItem(name) {
                 for (let i = 0; i < cart.length; i += 1) {
                     if (cart[i].name === name) {
-                        cart.splice(i, 1)
+                        cart[i].qty -= 1
+                       // cart.splice(i, 1)
                         return
                     }
                 }
