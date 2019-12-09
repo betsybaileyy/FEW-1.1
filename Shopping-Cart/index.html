@@ -63,6 +63,15 @@
                 return total.toFixed(2)
             }
 
+            function removeItem(name) {
+                for (let i = 0; i < cart.length; i += 1) {
+                    if (cart[i].name === name) {
+                        cart.splice(i, 1)
+                        return
+                    }
+                }
+            }
+
             addItem('Apple', 0.99)
             addItem('Orange', 1.29)
 
