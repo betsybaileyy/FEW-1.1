@@ -8,15 +8,29 @@
     </head>
 
     <body>
-        <script>
-            const cart = [ ]
-            
-            const a = 999
-            const obj = { a: a}
-            console.log(obj)
-           
-           // Add item
 
+        <div id="cart-qty">
+            <!-- Cart Qty Here -->
+        </div>
+
+        <ul id="item-list">
+            <!-- Cart Items -->
+        </ul>
+
+        <div id="cart-total">
+            <!-- Cart total -->
+        </div>
+       
+
+        <script>
+            const itemList = document.getElementById('item-list')
+            const cartQty = document.getElementById('cart-qty')
+            const cartTotal = document.getElementById('cart-total')
+
+            const cart = [ ]
+           
+           // -----------------------------------------------------
+           // Add item
             function addItem(name, price) {
                 for (let i = 0; i < cart.length; i += 1) {
                     if (cart[i].name === name) {
@@ -25,27 +39,29 @@
                     }
                 }
                 const item = { name, price, qty: 1 }
-                cart.push(name)
+                cart.push(item)
             }
 
-            // Show Item
+            // ----------------------------------------------------
+            // Show Items
             function showItems() {
                 const qty = getQty()
-                // for (let i = 0; i < cart.length; i += 1) {
-                //     qty += cart[i].qty
-                // }
-                console.log(`You have ${get} items in your cart`)
+                cartQty.innerHTML = `You have ${qty} items in your cart`
 
+                let itemStr = ''
                 for (let i = 0; i < cart.length; i += 1) {
-                    console.log(`- ${ cart[i].name } ${ cart[i].price } x ${ cart[i].qty }`)
+                    // console.log(`- ${ cart[i].name } $${ cart[i].price } x ${ cart[i].qty }`)
+                    // const name = cart[i].name
+                    // const price = cart[i].price
+                    // const qty = cart[i].qty
+
+                    const { name, price, qty } = cart[i]
+
+                    itemStr += `<li>${name} $${price} x ${qty} = ${qty * price}</li>`
                 }
+                itemList.innerHTML = itemStr
 
-                // let total = 0
-                // for (let i = 0; i < cart.length; i += 1) {
-                //     total += cart[i].price * cart[i].qty
-                // }
-
-                console.log(`Total in cart: $${total.toFixed(2)}`)
+                cartTotal.innerHTML = `Total in cart: $${getTotal()}`
 
             }
 
