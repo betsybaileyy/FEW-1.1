@@ -1,1 +1,1 @@
-This is a repo to learn how to work with markup!
+This repository contains course materials from FEW 1.1
