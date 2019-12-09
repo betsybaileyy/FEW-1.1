@@ -1,0 +1,1 @@
+This application uses basic elements of programming in JavaScript to build a shopping cart.
