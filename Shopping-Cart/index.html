@@ -27,6 +27,10 @@
             }
 
             function showItems() {
+                let qty = 0
+                for (let i = 0; i < cart.length; i += 1) {
+                    qty += cart[i].qty
+                }
                 console.log(`You have ${cart.length} items in your cart`)
 
                 for (let i = 0; i < cart.length; i += 1) {
