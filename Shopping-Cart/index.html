@@ -39,6 +39,14 @@
             const cart = [ ]
 
             // ---------------------------------------------------
+            // Handle Change events on update input
+            itemList.onchange = function(e) {
+                if (e.target && e.target.classList.contains('update')) {
+                    console.log(e.target)
+                }
+            }
+
+            // ---------------------------------------------------
             // Hanle clicks on list
             itemList.onclick = function(e) {
                 if (e.target && e.target.classList.contains('remove')){
@@ -99,7 +107,7 @@
                     <button class="remove" data-name="${name}">Remove</button>
                     <button class="add-one" data-name="${name}"> + </button>
                     <button class="remove-one" data-name="${name}"> - </button>
-
+                    <input class="update" type="number">
                     </li>`
                 }
                 itemList.innerHTML = itemStr
