@@ -42,7 +42,9 @@
             // Handle Change events on update input
             itemList.onchange = function(e) {
                 if (e.target && e.target.classList.contains('update')) {
-                    console.log(e.target)
+                   const name = e.target.dataset.name
+                   const qty = parseInt(e.target.value)
+                   updateCart(name, qty)
                 }
             }
 
@@ -107,7 +109,7 @@
                     <button class="remove" data-name="${name}">Remove</button>
                     <button class="add-one" data-name="${name}"> + </button>
                     <button class="remove-one" data-name="${name}"> - </button>
-                    <input class="update" type="number">
+                    <input class="update" type="number" data-name="${name}">
                     </li>`
                 }
                 itemList.innerHTML = itemStr
@@ -149,6 +151,22 @@
                     }
                 }
             }
+            // ---------------------------------------------
+            function updateCart(name, qty) {
+                for (let i = 0; i < cart.length; i += 1) {
+                    if (cart[i].name === name) {
+                        if (qty > 0) {
+                            cart[i].qty -= qty
+                        }
+                        if (cart[i].qty < 1 || qty === 0) {
+                            cart.splice(i, 1)
+                        }
+                        showItems()
+                        return
+                    }
+                }
+            }
+
 
             // --------------------------------
 
