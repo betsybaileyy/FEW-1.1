@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+    <style>
+      .calculator {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas:    "a a a a"
+                                "b c d e"
+                                "f g h i"
+                                "j k l m"
+                                "n o p q"
+                                "r r s t";
+        border: 1px solid #fff;
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 700px;
+        font-size: 2rem
+      }
+
+      .answer {
+          grid-area: a;
+          background-color: grey;
+          border: 1px solid #fff;
+          color: #fff;
+          border-radius: 10px;
+          padding-top: 0.5em;
+          padding-right: 0.5em;
+          text-align: right;
+          font-size: 2.5rem;
+        
+      }
+
+      button {
+          background-color: #dbdbdb;
+          border-radius: 3px;
+          border: 1px solid #c4c4c4;
+          background-color: transparent;
+          font-size: 10rem;
+          color: #333;
+          background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+          box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+          text-shadow: 0 1px rgba(255,255,255,.4);
+}
+
+
+      .clear {
+          grid-area: b;
+          font-size: 1rem;
+          color: #fff;
+          background-color: #b5b5b5;
+       
+      }
+
+      .addsub {
+          grid-area: c;
+          font-size: 2rem;
+          color: #fff;
+          background-color: #b5b5b5;
+      }
+
+      .percent {
+          grid-area: d;
+          font-size: 2rem;
+          color: #fff;
+          background-color: #b5b5b5;
+      }
+
+      .divide {
+          grid-area: e;
+          background-color: orange;
+          font-size: 2rem;
+          color: #fff;
+      }
+
+      .multiply {
+          grid-area: i;
+          background-color: orange;
+          font-size: 2rem;
+          color: #fff;
+      }
+
+      .subtract {
+          grid-area: m;
+          background-color: orange;
+          font-size: 2rem;
+          color: #fff;
+      }
+
+      .add {
+          grid-area: q;
+          background-color: orange;
+          font-size: 2rem;
+          color: #fff;
+      }
+
+      .equals {
+          grid-area: t;
+          background-color: orange;
+          font-size: 2rem;
+          color: #fff;
+      }
+
+      .nine {
+          grid-area: h;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .eight {
+          grid-area: g;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .seven {
+          grid-area: f;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .six {
+          grid-area: l;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .five {
+          grid-area: k;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .four {
+          grid-area: j;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .three {
+          grid-area: p;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .two {
+          grid-area: o;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .one {
+          grid-area: n;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .zero {
+          grid-area: r;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+      .decimal {
+          grid-area: s;
+          font-size: 2rem;
+          background-color: #e0e0e0;
+          color: #fff;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="calculator">
+      <div class="answer">Magic Calculator</div>
+
+      <button class="clear">clear</button>
+      <button class="addsub">+/-</button>
+      <button class="percent">%</button>
+      <button class="divide">/</button>
+
+      <button class="multiply">X</button>
+      <button class="subtract">-</button>
+      <button class="add">+</button>
+      <button class="equals">=</button>
+
+      <button class="nine">9</button>
+      <button class="eight">8</button>
+      <button class="seven">7</button>
+
+      <button class="six">6</button>
+      <button class="five">5</button>
+      <button class="four">4</button>
+
+      <button class="three">3</button>
+      <button class="two">2</button>
+      <button class="one">1</button>
+
+      <button class="zero">0</button>
+      <button class="decimal">.</button>
+      
+    </div>
+
+  </body>
+</html>`
