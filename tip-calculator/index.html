@@ -1,9 +1,80 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Magic Tip Calculator ✨</title>
     <style>
       /* Put your styles here */
+
+
+      body {
+        font-family: Helvetica;
+        width: 400;
+        padding: 20px;
+        align-items: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 400;
+
+      }
+
+    
+
+      label {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        /* text-align: center; */
+
+      }
+
+      input {
+        padding: 10px;
+        font-size: 15px;
+        margin: 10px 0;
+      }
+     
+      #tip-calculator {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+      }
+
+      p {
+        /* display: flex;
+        flex-direction: column; */
+        padding: 10px;
+        color:blue;
+        justify-content: center;
+        margin-left: 31px;
+        font-weight: bold;
+      }
+
+      #tip {
+        margin: 10px;
+        margin-left: 64px;
+        font-size: 1.25rem;
+        justify-content: center;
+        /* padding-left: 20px; */
+      }
+
+      button {
+        margin: 0 10px;
+        margin-left: 5px;
+        width: 200px;
+        padding: 20px;
+        /* padding-left: 20px; */
+        background-color: blue;
+        color: #fff;
+        font-size: 1rem;
+        border: 2px solid blue;
+        border-radius: 5px;
+        align-self: flex-start;
+
+      }
 
     </style>
   </head>
@@ -11,17 +82,20 @@
 
     <div class="container">
       <form id="tip-calculator">
+        <p>
+          Calculate Your Tip
+        </p>
         <label>
-          Bill
-          <input id="bill-total" type="number" step="0.1">
+          Bill Total
+          <input id="bill-total" type="number" step="0.1" placeholder="$">
         </label>
         
         <label>
           Tip %
-          <input id="tip-percent" type="number" step="0.1">
+          <input id="tip-percent" type="number" step="0.1" placeholder="%">
         </label>
         
-        <div id="tip">tipTotal</div>
+        <div id="tip">Tip Total</div>
         <button type="submit">Calculate</button>
       </form>
     </div>
@@ -36,11 +110,11 @@
 
       document.getElementById('tip-calculator').onsubmit = function (e) {
         e.preventDefault() 
-        let tipTotal = bill.value * tip.value
+        let tipTotal = bill.value * tip.value/100
         console.log(bill.value)
         console.log(tip.value)
 
-        document.getElementById('tip').innerHTML = tipTotal
+        document.getElementById('tip').innerHTML = `Your tip is $${tipTotal.toFixed(2)}`
       }
     
 
