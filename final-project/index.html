@@ -7,12 +7,7 @@
             <div class="container">
                     <div class="selector">
     
-                            <label >Select Title Font:</label><br>
-                            <select id="titleFont">
-                                <option value="Helvetica">Helvetica</option>
-                                <option value="Futura">Futura</option>
-                                <option value="Arial">Arial</option>
-                            </select><br><br>
+  
                             <label >Adjust Title Size:</label>
                             <input type="range" min="1" max="100" value="24" class="slider" id="1"><br><br>
             
@@ -27,12 +22,7 @@
                     <input  id="textColor" type="color">
                     <div class="selector">
             
-                            <label >Select Content Font:</label><br>
-                            <select id="contentFont">
-                                <option value="Helvetica">Helvetica</option>
-                                <option value="Futura">Futura</option>
-                                <option value="Arial">Arial</option>
-                            </select><br><br>
+  
                             
                             <label >Adjust content size:</label>
                             <input type="range" min="1" max="100" value="12" class="slider" id="2"><br>
@@ -48,9 +38,6 @@
 
         <style>
 
-                .selector {
-                    justify-content: center;
-                }
                 .flexrow {
                     display: flex;
                     flex-direction: row;
@@ -58,7 +45,7 @@
                 .flexbox {
                     display: flex;
                     flex-direction: column;
-                    align-items: flex-end;
+                    align-items: flex-start;
                 }
                 .container {
                     width: 400px;
@@ -86,5 +73,55 @@
                     margin: 2em;
                 }
             </style>
+                    <script>
+                             const form = document.getElementById('form')
+
+                            const textForm1 = document.getElementById('textForm1')
+                            const textForm1Color = document.getElementById('textForm1Color')
+                            const titleSize = document.getElementById('1')
+
+                            const textColor = document.getElementById('textColor')
+                            const contentSize = document.getElementById('2')
+
+                            const submit = document.getElementById('submit')
+                
+                            const displayh1 = document.getElementById('h1')
+                            const contentdisplay = document.getElementById('p')
+                
+                            textForm1.addEventListener('input', handleTitle)
+                            function handleTitle(e) {
+                                displayh1.innerHTML = e.target.value;
+                            }
+                            textForm1Color.addEventListener('input', handletextForm1Color)
+                            function handletextForm1Color(e) {
+                                displayh1.style.color = e.target.value;
+                            }
+                            titleSize.addEventListener('input', titleSize1)
+                            function titleSize1(e) {
+                                console.log(titleSize.value)
+                                let string = ""
+                                string = titleSize.value + "px"
+                                console.log(string)
+                                displayh1.style.fontSize = string;
+                            }
+                            contentSize.addEventListener('input', contentSize2)
+                            function contentSize2(e) {
+                                console.log(contentSize.value)
+                                let string = ""
+                                string = contentSize.value + "px"
+                                console.log(string)
+                                contentdisplay.style.fontSize = string;            }
+                
+                
+                            form.addEventListener('input', handleP)
+                            function handleP(e) {
+                                contentdisplay.innerHTML = e.target.value;
+                            }
+                            textColor.addEventListener('input', handletextColor)
+                            function handletextColor(e) {
+                                contentdisplay.style.color = e.target.value;
+                            }
+                
+                        </script>
     </body>
 </html>
